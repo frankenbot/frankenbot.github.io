@@ -5,9 +5,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Your description">
-  <meta name="author" content="Your name">
-  <meta name="generator" content="Hugo 0.16-DEV" />
+  <meta name="description" content="A report on our UBC Engineering Physics 253 robot competition entry.">
+  <meta name="author" content="Frankenbot">
+  <meta name="generator" content="Hugo 0.26" />
   <title>frankenbot</title>
   <!-- Stylesheets -->
   <link href="https://frankenbot.github.io/css/bootstrap-v3.3.7/bootstrap.min.css" rel="stylesheet">
@@ -445,7 +445,7 @@
 
             <ul class="list-inline social-buttons">
               
-                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/adam-fink-8a0a16103"><i class="fa fa-linkedin"></i></a></li>
               
             </ul>
 
@@ -642,7 +642,7 @@
 <br> - Simple discrete and active components
 <br> <br>
 <strong>Mechanical</strong>
-<br><i>All of our mechanical parts were designed on OnShape and prototyped using the materials available. </i><br>
+<br><i>All of our mechanical parts were designed in OnShape cloud CAD software and prototyped using the materials available. </i><br>
 <br> - Long rods (Aluminum, Steel, etc.)
 <br> - Nuts, bolts, etc.
 <br> - Various materials (delrin, acrylic, polypropylene, etc.)
@@ -718,8 +718,13 @@ and a peak detector.</p>
 The phototransistor was installed at the front of the robot, underneath the bucket,
 to ensure that no part of the robot is blocking the detector.</p>
 
-<p><img src="/img/portfolio/meetfrankenbot/ircircuit.png" alt="alt text" title="IR detector PCB" /><br />
-The band-pass filter was tuned to allow 1 kHz signals to pass through, producing a detector with a
+<p><img src="/img/portfolio/meetfrankenbot/ircircuit.png" alt="alt text" title="IR detector PCB" /> <br></p>
+
+<p>Below is a diagram of our IR amplification and filtration circuit designed to detect a 1kHz signal. <br><br></p>
+
+<p><IMG SRC="/img/portfolio/meetfrankenbot/ircircuitdiagram.png" ALT="Sorry! This photo didn't load properly" width="899" height="612"></p>
+
+<p>The band-pass filter was tuned to allow 1 kHz signals to pass through, producing a detector with a
 high voltage output for 1 kHz and a low output for 10 kHz.
 The gain of the amplifier was adjusted to increase the sensitivity of the detector even from a
 distance, while ensuring that the voltage difference between 10 kHz and 1 kHz is significant.
@@ -751,7 +756,7 @@ before they drown!</p>
 <h5 id="arm">Arm</h5>
 
 <p><a href="https://cad.onshape.com/documents/e98b69ac059f99b30a6500c9/w/1b042e790ec5e8dabe7a7bc1/e/a025136a670819f52d744b4c">Click here</a>
-to see the full design on Onshape</p>
+to see the full design in Onshape</p>
 
 <p><strong>How we did it</strong><br />
 Frankenbot has three servo motors controlling the retrieval arm and claw:</p>
@@ -827,7 +832,7 @@ O-rings were used to hold the ball bearings in place.</p>
 <h5 id="bucket-lifter">Bucket Lifter</h5>
 
 <p><a href="https://cad.onshape.com/documents/e98b69ac059f99b30a6500c9/w/1b042e790ec5e8dabe7a7bc1/e/caffcd26f576963c07f32388">Click here</a>
-to see the full design on Onshape</p>
+to see the full design in Onshape</p>
 
 <p><strong>How we did it</strong></p>
 
@@ -967,6 +972,13 @@ a hollow aluminum rod, thereby reducing the weight.</p>
 <!-- Custom Theme -->
 <script src="https://frankenbot.github.io/js/agency.js"></script>
 
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-104972796-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
 
 
 
