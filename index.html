@@ -629,7 +629,7 @@
 
 <p><br></p>
 
-<h4 id="tape-follow">Tape Follow</h4>
+<h3 id="tape-follow">Tape Follow</h3>
 
 <p>Detecting and following black tape was essential for navigating the
 <a href="http://projectlab.engphys.ubc.ca/enph253-2017/competition-2017/">competition surface</a>,
@@ -641,56 +641,56 @@ The drive system consists of two DC motors connected to gears that rotate the wh
 Rubber tires (not shown) were used to increase friction, facilitating sharp turns and steep climbs.</p>
 
 <p><img src="/img/portfolio/meetfrankenbot/testingHBridge.png" alt="alt text" title="testing H-bridge" /><br />
-The DC motors were controlled by the TINAH board through an H-bridge circuit.</p>
+The DC motors were controlled by the TINAH board through an H-bridge circuit so that we could drive at high power.</p>
 
-<p><img src="/img/portfolio/meetfrankenbot/tapefollowing1_400.png" alt="alt text" title="tapefollowing with chassis 1" /><br />
+<p><img src="/img/portfolio/meetfrankenbot/tapefollowing1_400.png" alt="alt text" title="tape following with chassis 1" /><br />
 To detect the black tape, we used QRD reflective sensors that read a low voltage on
 highly reflective surfaces, thereby allowing us to distinguish between the white surface and black tape.</p>
 
 <p><img src="/img/portfolio/meetfrankenbot/qrds.png" alt="alt text" title="QRD reflective sensors" /><br />
 Frankenbot has three pairs of QRDs: one pair in the middle
-for tapefollowing up to the tank, and two more pairs on either side of the robot
-used for tapefollowing around the tank.
+for tape following up to the tank, and two pairs on either side of the robot
+used for tape following around the tank.
 The two additional pairs of QRDs helped better position the robot around the tank to facilitate
 rescuing the agents on the platforms.</p>
 
-<p>A software based PID (proportinal-integral-drivative) control was used for navigation along the tape.
+<p>A software-based PID (proportional-integral-derivative) control was used for navigation along the tape.
 The PID was tuned through extensive testing, from which we found that the effects of
 integral and derivative control were negligible for this simple system.</p>
 
 <p><strong>Main challenges</strong></p>
 
-<p><img src="/img/portfolio/meetfrankenbot/tapefollowing2.png" alt="alt text" title="tapefollowing around tank" /><br />
+<p><img src="/img/portfolio/meetfrankenbot/tapefollowing2.png" alt="alt text" title="tape following around tank" /><br />
 Traveling around the tank proved to be the biggest challenge due to the short segments of extra tape
 that marked the plank positions. To minimize the risk of the robot traveling down the tape,
-we tuned the motor speeds around the tank so that the robot would travel around a circular path by default.</p>
+we tuned a speed bias for each wheel so that if the robot was on black tape, it would travel in a circular path rather than a straight line.</p>
 
 <p><img src="/img/portfolio/meetfrankenbot/securingQRDs.png" alt="alt text" title="securing QRDs" /><br />
 The QRDs also proved to be very sensitive to the positioning, so we had to secure them at their optimal
-heights above the ground.</p>
+heights above the ground using twisted O-Rings and a glue gun.</p>
 
-<h4 id="navigate-safely-through-the-armed-door">Navigate safely through the Armed Door</h4>
+<h3 id="navigate-safely-through-the-armed-door">Navigate safely through the Armed Door</h3>
 
 <p><img src="/img/portfolio/meetfrankenbot/alarmDoor.png" alt="alt text" title="alarm door" /><br />
 The second door from the startline is an alarm door to prevent intruders from
-entering the compound. Frankenbot has to determine whether the door is armed or disarmed
-based on the IR signal being emitted from the door (10 kHz indicates armed, 1 kHz indicates disarmed).</p>
+entering the compound. Frankenbot has to determine whether the door is armed or unarmed
+based on the IR signal being emitted from the door (10 kHz indicates armed, 1 kHz indicates unarmed).</p>
 
 <p><strong>How we did it</strong><br />
-Frankenbot&rsquo;s IR detector is composed of a phototransistor, high and band-pass filters, amplifiers,
+Frankenbot&rsquo;s 1kHz IR detector is composed of a phototransistor, high and band-pass filters, amplifiers,
 and a peak detector.</p>
 
 <p><img src="/img/portfolio/meetfrankenbot/irphototransistor.png" alt="alt text" title="phototransistor" /><br />
-The phototransistor was installed at the front of the robot, right under where the bucket is sitting,
+The phototransistor was installed at the front of the robot, underneath the bucket,
 to ensure that no part of the robot is blocking the detector.</p>
 
 <p><img src="/img/portfolio/meetfrankenbot/ircircuit.png" alt="alt text" title="IR detector PCB" /><br />
-The band-pass filter was tuned to allow 1 kHz signal to pass through, producing a detector with a
+The band-pass filter was tuned to allow 1 kHz signals to pass through, producing a detector with a
 high voltage output for 1 kHz and a low output for 10 kHz.
 The gain of the amplifier was adjusted to increase the sensitivity of the detector even from a
 distance, while ensuring that the voltage difference between 10 kHz and 1 kHz is significant.
 We succeeded in making a detector that would switch from an output of 0.6V at 10 kHz
-to 5.0V at 1kHz.</p>
+to 5.0V at 1kHz. Frankenbot could detect the IR frequency change from a maximum distance of 2.5m and a minimum distance of 0.2m.</p>
 
 <p><strong>Main challenges</strong></p>
 
@@ -708,7 +708,7 @@ we decided to program Frankenbot so that he stops right after the first door
 (which he detects with the red-coloured collision switches on the side of the chassis)
 before detecting the IR signal and making the decision to wait or drive through.</p>
 
-<h4 id="rescue-agents-out-of-water-tank">Rescue Agents out of Water Tank</h4>
+<h3 id="rescue-agents-out-of-water-tank">Rescue Agents out of Water Tank</h3>
 
 <p><img src="/img/portfolio/meetfrankenbot/capturedAgents.png" alt="alt text" title="captured agents" /><br />
 The agents are captured in a water tank! Frankenbot has to rescue them out of the tank
@@ -730,29 +730,29 @@ a lifting servo for the up-and-down motion;</p>
 
 <p><img src="/img/portfolio/meetfrankenbot/claw.png" alt="alt text" title="claw servo" /><br />
 and a claw servo for the opening and closing of the claw.<br />
-The claw has been decorated with rubber bands that help securely grip the agents
+<br> The claw has been decorated with rubber bands that help securely grip the agents
 with friction and by molding to the shape of the agents.</p>
 
 <p><strong>Main Challenges</strong></p>
 
 <p><img src="/img/portfolio/meetfrankenbot/tinahPoweredArm.png" alt="alt text" title="TINAH-powered arm" /><br />
 Initially, we had the servo motors directly connected to the TINAH board,
-only to realize that the TINAH was not able to supply enough current to all three.
-Therefore we prepared voltage regulators for each servo motor, powered directly from the batteries.<br />
-However, even after powering the servo motors with regulators, the arm and claw continued to
-flutter and would not stay steady. After consulting an instructor, we learned that
-the problem was caused by a lack of a common ground between the power supply (from the battery)
-and the PWM signals (from the TINAH) fed to the servos. Adding a grounding wire connection
+only to realize that the TINAH was not able to supply enough current to all three motors.
+Because of this, we prepared voltage regulators for each servo motor, powered directly from the LiPo batteries.<br />
+<br> However, even after powering the servo motors with regulators, the arm and claw continued to
+flutter and would not stay still. After consulting an instructor, we learned that
+the problem was caused by a lack of a common ground between the power supply (battery)
+and the PWM signals (from the TINAH microcontroller) fed to the servos. Adding a common ground connection
 between the two helped stabilize the arm and claw, and that same day Frankenbot was able to rescue
 his first agent from the tank.</p>
 
 <p><img src="/img/portfolio/meetfrankenbot/armGears.png" alt="alt text" title="arm lifter gears" /><br />
-Another major issue with the arm design was that the strain on the lifting servo
-was enormous. Reducing the torque on the servo with gears were not enough to
-alleviate the strain, so platforms were created to help hold the arm up in place when not being used.
-Still it was evident that the servo motor was fatigued when used continuously.<br />
-If we were to rebuild the robot, we will redesign the retrieval arm by installing a spring under the arm
-to counter the weight of the claw, shortening the arm, or reducing weight at the claw end.</p>
+Another major issue with the arm design was the enormous strain forced on the lifting servo.
+Reducing the torque on the servo with a larger gear ratio was not enough to
+alleviate the strain, so a platform was built to help hold the arm in its resting position when not being used.
+Still, it was evident that the servo motor was fatigued when used continuously.<br />
+<br> If we were to rebuild the robot, we would redesign the retrieval arm by installing a spring under the arm
+to counter the weight of the claw, shortening the arm, or reducing weight at the end of the arm, the claw.</p>
 
 <h5 id="plank-detection">Plank Detection</h5>
 
@@ -774,11 +774,11 @@ against the tank or the robot&rsquo;s turn radius being increased or decreased.
 Tuning the robot&rsquo;s turn radius was important to ensure that Frankenbot knew
 which plank he was passing at any given point in time.</p>
 
-<h4 id="send-agents-down-the-zipline">Send Agents Down the Zipline</h4>
+<h3 id="send-agents-down-the-zipline">Send Agents Down the Zipline</h3>
 
 <p><img src="/img/portfolio/meetfrankenbot/zipline.png" alt="alt text" title="zipline" /><br />
 Once rescued from the tank, the six agents had to be freed from captivity
-by traveling down a metal rod.</p>
+by traveling down a metal rod known as the zipline.</p>
 
 <h5 id="bucket">Bucket</h5>
 
@@ -799,7 +799,7 @@ to see the full design on Onshape</p>
 
 <p><img src="/img/portfolio/meetfrankenbot/winch1.png" alt="alt text" title="first lifter prototype" /><br />
 Frankenbot lifts the bucket onto the zipline using a winch mechanism consisting of a DC motor
-powered through an H-bridge circuit, and a pulley that is fastened to a rotating square shaft
+powered through an H-bridge circuit, and a winch that is fastened to a rotating square shaft
 connected to the lifter arms.</p>
 
 <p><img src="/img/portfolio/meetfrankenbot/winch2.png" alt="alt text" title="second lifter prototype" /><br />
@@ -812,10 +812,10 @@ Frankenbot corrects his orientation relative to the zipline using these switches
 <p><img src="/img/portfolio/meetfrankenbot/winch3.png" alt="alt text" title="final lifter" /><br />
 The initial torque calculations were done on a winch that had a 20% smaller diameter,
 so the first lifter prototype caused too much strain on the DC motor, which could only lift
-a maximum of four agents. We attempted to increase the diameter of the pulley,
-but this was limited by the arm that would rotate right above the pulley
+a maximum of four agents. We attempted to increase the diameter of the winch,
+but this was limited by the arm that would rotate right above the winch
 and by the overall height restriction of the robot. In the end, we were able to
-lighten the load on the winch by exchanging the steel rod on the bucket hook with
+lighten the load on the winch by exchanging the solid steel rod on the bucket hook with
 a hollow aluminum rod, thereby reducing the weight.</p>
               <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
             </div>
